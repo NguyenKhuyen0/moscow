@@ -3,6 +3,7 @@ get_header();
 $post_id = get_the_ID();
 global $post;
 setup_postdata( $post );
+
 ?>
     <!-- Preloader Start -->
     <div id="loader-wrapper">
@@ -61,7 +62,7 @@ setup_postdata( $post );
 							<!-- Meta Ends -->
 						</div>
 						<!-- Excerpt Ends -->
-						<?php include('comments.php')?>
+						<?php comments_template();?>
 						<!-- .comment-list -->
 
 			

@@ -18,66 +18,6 @@
 if ( post_password_required() ) {
 	return;
 }
-?>
-
-<div id="comments" class="comments-area">
-
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h2 class="comments-title">
-			<?php
-			$portfolio_moscow_comment_count = get_comments_number();
-			if ( '1' === $portfolio_moscow_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'portfolio-moscow' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $portfolio_moscow_comment_count, 'comments title', 'portfolio-moscow' ) ),
-					number_format_i18n( $portfolio_moscow_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
-
-		<?php the_comments_navigation(); ?>
-
-		<ol class="comment-list">
-			<?php
-			wp_list_comments(
-				array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				)
-			);
-			?>
-		</ol><!-- .comment-list -->
-
-		<?php
-		the_comments_navigation();
-
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'portfolio-moscow' ); ?></p>
-			<?php
-		endif;
-
-	endif; // Check for have_comments().
-
-	
-	?>
-
-</div><!-- #comments -->
-
-
-<?php
 
 $fields =  array(
     'author' => '<div class="input-field second-font"><i class="fa fa-user prefix"></i><input id="name" name="author" type="text" class="validate" required><label class="font-weight-400" for="name">Your Name</label></div>',
@@ -97,60 +37,54 @@ $comments_args = array(
 <div class="comments">
 <h3 class="comments-heading uppercase"><?php echo get_comments_number(); ?> Comments</h3>
 <ul class="comments-list">
-	<li>
-		<!-- Comment Starts -->
-		<div class="comment">
-			<img class="comment-avatar pull-left" alt="" src="http://via.placeholder.com/100x100">
-			<div class="comment-body">
-				<div class="meta-data">
-					<span class="comment-author">Dalel Boubaker</span>
-					<span class="comment-date pull-right second-font">January 17, 2017</span>
-				</div>
-				<div class="comment-content">
-				<p class="second-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehen.</p></div>
-				<div>
-					<a class="comment-reply" href="#">Reply</a>
-				</div>	
-			</div>
-		</div>
-		<!-- Comment Ends -->
-		<ul class="comments-reply">
-			<li>
-				<!-- Comment Starts -->
-				<div class="comment">
-					<img class="comment-avatar pull-left" alt="" src="http://via.placeholder.com/100x100">
-					<div class="comment-body">
-						<div class="meta-data">
-							<span class="comment-author">Lina Marzouki</span>
-							<span class="comment-date pull-right second-font">January 17, 2017</span>
-						</div>
-						<div class="comment-content">
-						<p class="second-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehen.</p></div>
-						<div>
-							<a class="comment-reply" href="#">Reply</a>
-						</div>	
+	<?php
+		$comments = get_comments( array( 'post_id' => $post_id ) );
+ 
+		foreach ( $comments as $comment ) :
+			if($comment->comment_parent == 0):
+			?>
+			<div class="comment">
+				<img class="comment-avatar pull-left" alt="" src="http://via.placeholder.com/100x100">
+				<div class="comment-body">
+					<div class="meta-data">
+						<span class="comment-author"><?php echo $comment->comment_author; ?></span>
+						<span class="comment-date pull-right second-font"><?php echo get_comment_date("d-M-Y",$comment->comment_ID) ?></span>
 					</div>
+					<div class="comment-content"><p class="second-font"><?php echo $comment->comment_content; ?></p></div>
+					<div>
+						<a class="comment-reply" href="#">Reply</a>
+					</div>	
 				</div>
-				<!-- Comment Ends -->
-			</li>
-		</ul>
-		<!-- Comment Starts -->
-		<div class="comment last">
-			<img class="comment-avatar pull-left" alt="" src="http://via.placeholder.com/100x100">
-			<div class="comment-body">
-				<div class="meta-data">
-					<span class="comment-author">Slim Hamdi</span>
-					<span class="comment-date pull-right second-font">January 17, 2017</span>
-				</div>
-				<div class="comment-content">
-				<p class="second-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehen.</p></div>
-				<div>
-					<a class="comment-reply" href="#">Reply</a>
-				</div>	
 			</div>
-		</div>
-		<!-- Comment Ends -->
-	</li>
+			<?php
+			foreach ( $comment->get_children() as $child_comment ) :	
+			?>
+				<ul class="comments-reply">
+					<li>
+						<!-- Comment Starts -->
+						<div class="comment">
+							<img class="comment-avatar pull-left" alt="" src="http://via.placeholder.com/100x100">
+							<div class="comment-body">
+								<div class="meta-data">
+									<span class="comment-author"><?php echo $child_comment->comment_author; ?></span>
+									<span class="comment-date pull-right second-font"><?php echo get_comment_date("d-M-Y",$child_comment->comment_ID) ?></span>
+								</div>
+								<div class="comment-content">
+								<p class="second-font"><?php echo $child_comment->comment_content; ?></p></div>
+								<div>
+									<a class="comment-reply" href="#">Reply</a>
+								</div>	
+							</div>
+						</div>
+						<!-- Comment Ends -->
+					</li>
+				</ul>
+			<?php
+			endforeach;
+			endif;
+		endforeach;
+	?>
+
 </ul>
 <h3 class="comments-heading uppercase add-comment">Add a comment</h3>
 <div class="comments-form">
