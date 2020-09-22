@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <title>Moscow - Personal Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
-
-    <!-- Template CSS Files -->
-    <link rel="stylesheet" type="text/css" href=<?php echo THEME_PATH."css/font-awesome.min.css" ?> />
-    <link rel="stylesheet" type="text/css" href=<?php echo THEME_PATH."css/jquery.animatedheadline.css" ?> />
-    <link rel="stylesheet" type="text/css" href=<?php echo THEME_PATH."css/materialize.min.css" ?> />
-    <link rel="stylesheet" type="text/css" href=<?php echo THEME_PATH."css/style.css" ?> />
-    <link rel="stylesheet" type="text/css" href=<?php echo THEME_PATH."css/skins/yellow.css" ?> />
-
-    <!-- Template JS Files -->
-    <script src=<?php echo THEME_PATH. "js/modernizr.custom.js" ?>></script>
-
-</head>
-
-<body class="dark">
+<?php
+get_header();
+?>
     <!-- Preloader Start -->
     <div id="loader-wrapper">
         <div id="loader"></div>
@@ -40,11 +21,11 @@
                             <div class="selector uppercase" id="selector">
                                 <h3 class="ah-headline p-none m-none">
                                     <span class="font-weight-400">Hi There ! I'm</span>
-									<span class="my-name">Linda Smith</span>
+									<span class="my-name">HENRY PHUC LE</span>
                                     <span class="ah-words-wrapper">
-										<b class="is-visible">web designer</b>
-										<b>developer</b>
-										<b>blogger</b>
+										<b class="is-visible">BLOGGER</b>
+										<b>MARKETER</b>
+										<b>ENTREPRENEUR</b>
 									</span>
                                 </h3>
                             </div>
@@ -373,7 +354,7 @@
                     <div class="page-title center-align">
                         <h2 class="center-align">
                             <span data-hover="my">my </span>
-                            <span data-hover="portfolio">portfolio</span>
+                            <span data-hover="story">story</span>
                         </h2>
                     </div>
                 </div>
@@ -384,7 +365,7 @@
                     <div class="container page-title center-align">
                         <h2 class="center-align">
                             <span data-hover="my">my </span>
-                            <span data-hover="portfolio">portfolio</span>
+                            <span data-hover="story">story</span>
                         </h2>
                     </div>
                     <!-- Main Heading Ends -->
@@ -482,8 +463,8 @@
                 <div class="bl-box valign-wrapper">
                     <div class="page-title center-align">
                         <h2 class="center-align">
-                            <span data-hover="get">get </span>
-                            <span data-hover="in touch">in touch</span>
+                            <span data-hover="REACHING">REACHING </span>
+                            <span data-hover="ME OUT">ME OUT</span>
                         </h2>
                     </div>
                 </div>
@@ -493,8 +474,8 @@
                     <!-- Main Heading Starts -->
                     <div class="container page-title center-align">
                         <h2 class="center-align">
-                            <span data-hover="get">get </span>
-                            <span data-hover="in touch">in touch</span>
+                            <span data-hover="REACHING">REACHING </span>
+                            <span data-hover="ME OUT">ME OUT</span>
                         </h2>
                     </div>
                     <!-- Main Heading Ends -->
@@ -828,14 +809,8 @@
     </div>
     <!-- Wrapper Ends -->
 
-    <!-- Template JS Files -->
-    <script src=<?php echo THEME_PATH. "js/jquery-2.2.4.min.js" ?>></script>
-    <script src=<?php echo THEME_PATH. "js/jquery.animatedheadline.js" ?>></script>
-    <script src=<?php echo THEME_PATH. "js/boxlayout.js" ?>></script>
-    <script src=<?php echo THEME_PATH. "js/materialize.min.js" ?>></script>
-    <script src=<?php echo THEME_PATH. "js/jquery.hoverdir.js" ?>></script>
-    <script src=<?php echo THEME_PATH. "js/custom.js" ?>></script>
 
-</body>
+<?php
 
-</html>
+get_footer();
+?>

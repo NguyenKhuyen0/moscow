@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying search results pages
+ * The template for displaying archive pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package portfolio-moscow
  */
@@ -10,44 +10,71 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
+    <!-- Preloader Start -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- Preloader Ends -->
+    <!-- Wrapper Starts -->
+    <div class="wrapper">
+		<div class="container page-title center-align">
+			<h2 class="center-align">
+				<span>My </span>
+				<span>blog</span>
+			</h2>
+		</div>
+		<!-- Divider Starts -->
+		<div class="divider center-align">
+			<span class="outer-line"></span>
+			<span class="fa fa-vcard" aria-hidden="true"></span>
+			<span class="outer-line"></span>
+		</div>
+		<!-- Divider Ends -->
+		<div class="container">
+			<div class="row">
+				<div class="content col s12 m8 l8 xl8">
+					<?php if ( have_posts() ) : ?>
 					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'portfolio-moscow' ), '<span>' . get_search_query() . '</span>' );
+						/* Start the Loop */
+						while ( have_posts() ) :
+							the_post();
+
+							/*
+							* Include the Post-Type-specific template for the content.
+							* If you want to override this in a child theme, then include a file
+							* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+							*/
+							get_template_part( 'template-parts/content', get_post_type() );
+
+						endwhile;
+
+						
+
+					else :
+
+						get_template_part( 'template-parts/content', 'none' );
+
+					endif;
 					?>
-				</h1>
-			</header><!-- .page-header -->
+					<?php 
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
+						echo moscow_numeric_posts_nav();
+					
+					?>
+				</div>
+				<?php
+					get_sidebar();
+				?>
+			</div>
+		</div>
+    </div>
+    <!-- Wrapper Ends -->
 
 <?php
-get_sidebar();
+
 get_footer();
+?>

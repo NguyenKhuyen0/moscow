@@ -52,7 +52,7 @@ get_header();
 
 						endwhile;
 
-						the_posts_navigation();
+						
 
 					else :
 
@@ -60,20 +60,11 @@ get_header();
 
 					endif;
 					?>
-					<?php $paged = ( get_query_var('paged') ) ? get_query_var( 'paged' ) : 1; ?>
-					<?php
-						echo $wp_query->max_num_pages; 
+					<?php 
+
+						echo moscow_numeric_posts_nav();
+					
 					?>
-					<?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
-					<ul class="pagination center-align">
-						<li class="disabled"><a href="#!"><i class="fa fa-angle-left"></i></a></li>
-						<li class="active"><a href="#!">1</a></li>
-						<li class="waves-effect"><a href="#!">2</a></li>
-						<li class="waves-effect"><a href="#!">3</a></li>
-						<li class="waves-effect"><a href="#!">4</a></li>
-						<li class="waves-effect"><a href="#!">5</a></li>
-						<li class="waves-effect"><a href="#!"><i class="fa fa-angle-right"></i></a></li>
-					  </ul>
 				</div>
 				<?php
 					get_sidebar();

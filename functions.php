@@ -16,6 +16,12 @@ require get_template_directory() . '/inc/const.php';
  */
 require get_template_directory() . '/inc/index-settings.php';
 
+
+/**
+ * 	Helper Functions
+ */
+require get_template_directory() . '/inc/helper.php';
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );

@@ -4,7 +4,7 @@
         <!-- Figure Starts -->
         <figure class="blog-figure">
             <a href="<?php the_permalink(); ?>">
-                <img class="responsive-img" src="http://via.placeholder.com/748x364" alt="">
+                <img class="responsive-img" src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : FAIL_THUMBNAIL ?>" alt="">
             </a>
         </figure>
         <!-- Figure Ends -->
