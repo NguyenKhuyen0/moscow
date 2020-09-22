@@ -11,6 +11,11 @@
  */
 require get_template_directory() . '/inc/const.php';
 
+/**
+ * 	Index Settings
+ */
+require get_template_directory() . '/inc/index-settings.php';
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
