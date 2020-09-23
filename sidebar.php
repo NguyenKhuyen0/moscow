@@ -10,6 +10,7 @@
 // if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 // 	return;
 // }
+wp_reset_postdata();
 ?>
 
 <!-- <aside id="secondary" class="widget-area"> -->
@@ -45,20 +46,20 @@
 	<div class="widget recent-posts">
 		<h3 class="widget-title">Recent Posts</h3>
 		<ul class="unstyled clearfix">
-		<?php foreach($recent_posts as $post) : ?>
+		<?php foreach($recent_posts as $p) : ?>
 			<!-- Recent Post Widget Starts -->
 			<li>
 				<div class="posts-thumb pull-left"> 
 					<a href="<?php the_permalink(); ?>">
-						<img alt="img" src="<?php echo get_the_post_thumbnail_url($post['ID'],'thumbnail') ? get_the_post_thumbnail_url($post['ID'],'thumbnail') : FAIL_SMALL_THUMBNAIL ?>">
+						<img alt="img" src="<?php echo get_the_post_thumbnail_url($p['ID'],'thumbnail') ? get_the_post_thumbnail_url($p['ID'],'thumbnail') : FAIL_SMALL_THUMBNAIL ?>">
 					</a>
 				</div>
 				<div class="post-info">
 					<h4 class="entry-title">
-						<a href="<?php the_permalink(); ?>"><?php echo $post['post_title'] ?></a>
+						<a href="<?php the_permalink($p['ID']); ?>"><?php echo $p['post_title'] ?></a>
 					</h4>
 					<p class="post-meta second-font">
-						<span class="post-date">  <?php echo get_the_time("d-M-Y",$post['ID']); ?></span>
+						<span class="post-date">  <?php echo get_the_time("d-M-Y",$p['ID']); ?></span>
 					</p>
 				</div>
 				<div class="clearfix"></div>

@@ -38,6 +38,7 @@ $comments_args = array(
 <h3 class="comments-heading uppercase"><?php echo get_comments_number(); ?> Comments</h3>
 <ul class="comments-list">
 	<?php
+		$post_id = get_the_ID();
 		$comments = get_comments( array( 'post_id' => $post_id ) );
  
 		foreach ( $comments as $comment ) :
@@ -52,7 +53,7 @@ $comments_args = array(
 					</div>
 					<div class="comment-content"><p class="second-font"><?php echo $comment->comment_content; ?></p></div>
 					<div>
-						<a class="comment-reply" href="#">Reply</a>
+						<a rel="nofollow" class="comment-reply" href="/?replytocom=<?php echo $child_comment->comment_ID ?>#respond" data-commentid="<?php echo $child_comment->comment_ID ?>" data-postid="<?php echo $post_id ; ?>" data-belowelement="div-comment-<?php echo $child_comment->comment_ID ?>" data-respondelement="respond" data-replyto="<?php echo $child_comment->comment_author; ?>" aria-label="<?php echo $child_comment->comment_author; ?>">Reply</a>
 					</div>	
 				</div>
 			</div>
@@ -72,7 +73,7 @@ $comments_args = array(
 								<div class="comment-content">
 								<p class="second-font"><?php echo $child_comment->comment_content; ?></p></div>
 								<div>
-									<a class="comment-reply" href="#">Reply</a>
+									<a rel="nofollow" class="comment-reply" href="/?replytocom=<?php echo $child_comment->comment_ID ?>#respond" data-commentid="<?php echo $child_comment->comment_ID ?>" data-postid="<?php echo $post_id ; ?>" data-belowelement="div-comment-<?php echo $child_comment->comment_ID ?>" data-respondelement="respond" data-replyto="<?php echo $child_comment->comment_author; ?>" aria-label="<?php echo $child_comment->comment_author; ?>">Reply</a>
 								</div>	
 							</div>
 						</div>
@@ -86,6 +87,7 @@ $comments_args = array(
 	?>
 
 </ul>
+<?php if ( comments_open() ): ?>
 <h3 class="comments-heading uppercase add-comment">Add a comment</h3>
 <div class="comments-form">
 	<?php comment_form($comments_args); ?>
@@ -97,3 +99,4 @@ $comments_args = array(
 	display: none;
 }
 </style>
+<?php endif; ?>

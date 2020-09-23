@@ -70,8 +70,39 @@
 					i = e - 2;
 				$(".resume-card").removeClass("front back up-front up-up-front back-back"), $(".resume-card-" + e).addClass("front"), $(".resume-card-" + t).addClass("back"), $(".resume-card-" + n).addClass("back-back"), $(".resume-card-" + i).addClass("back")
 			});
-		}
-		
+        }
     });
 
 })(jQuery);
+
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    body = document.getElementsByTagName('body')[0];
+    body.style.overflow =  "hidden";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+    body = document.getElementsByTagName('body')[0];
+    body.style.overflow =  "unset";
+}
+
+// FAQ
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+      this.getElementsByClassName("fa-plus")[0].style.display = "block";
+      this.getElementsByClassName("fa-minus")[0].style.display = "none";
+    } else {
+      panel.style.display = "block";
+      this.getElementsByClassName("fa-plus")[0].style.display = "none";
+      this.getElementsByClassName("fa-minus")[0].style.display = "block";
+    }
+  });
+}

@@ -344,7 +344,7 @@ get_header();
 					<!-- Fun Facts Ends -->
                 </div>
                 <!-- End Expanded About -->
-                <img alt="close" src="images/close-button.png" class="bl-icon-close" />
+                <img alt="close" src=<?php echo THEME_PATH."images/close-button.png" ?> class="bl-icon-close" />
             </section>
             <!-- About Ends -->
             <!-- Portfolio Starts -->
@@ -454,7 +454,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Portfolio Expanded Ends -->
-                <img alt="close" src="images/close-button.png" class="bl-icon-close" />
+                <img alt="close" src=<?php echo THEME_PATH."images/close-button.png" ?> class="bl-icon-close" />
             </section>
             <!-- Portfolio Section Ends -->
             <!-- Contact Section Starts -->
@@ -560,7 +560,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Expanded Contact Ends -->
-                <img alt="close" src="images/close-button.png" class="bl-icon-close" />
+                <img alt="close" src=<?php echo THEME_PATH."images/close-button.png" ?> class="bl-icon-close" />
             </section>
             <!-- Contact Section Ends -->
             <!-- Portfolio Panel Items Starts -->
@@ -583,7 +583,7 @@ get_header();
                                 <li><i class="fa fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span> : <span class="font-weight-400 uppercase">php, html, css, javascript</span></li>
                             </ul>
                             <hr>
-                            <a href="#" class="waves-effect waves-light btn font-weight-700">Preview <i class="fa fa-external-link"></i></a>
+                            <a href="javascript:void(0)" class="waves-effect waves-light btn font-weight-700" onclick="openNav()">Preview <i class="fa fa-external-link"></i></a>
                         </div>
                         <!-- Project Details Ends -->
                     </div>
@@ -612,7 +612,7 @@ get_header();
                                 <li><i class="fa fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span> : <span class="font-weight-400 uppercase">php, html, css, javascript</span></li>
                             </ul>
                             <hr>
-                            <a href="#" class="waves-effect waves-light btn font-weight-700">Preview <i class="fa fa-external-link"></i></a>
+                           <a href="javascript:void(0)" class="waves-effect waves-light btn font-weight-700" onclick="openNav()">Preview <i class="fa fa-external-link"></i></a>
                         </div>
                         <!-- Project Details Ends -->
                     </div>
@@ -638,7 +638,7 @@ get_header();
                                 <li><i class="fa fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span> : <span class="font-weight-400 uppercase">Adobe After Effects, Adobe Audition</span></li>
                             </ul>
                             <hr>
-                            <a href="#" class="waves-effect waves-light btn font-weight-700">Preview <i class="fa fa-external-link"></i></a>
+                           <a href="javascript:void(0)" class="waves-effect waves-light btn font-weight-700" onclick="openNav()">Preview <i class="fa fa-external-link"></i></a>
                         </div>
                         <!-- Project Details Ends -->
                     </div>
@@ -650,7 +650,7 @@ get_header();
                         <!-- Project Main Content Starts -->
                         <div class="col s12 l6 xl6 section-padding section-padding-right-none">
                             <video id="video" class="responsive-video" controls poster="http://via.placeholder.com/561x315">
-								<source src="images/projects/video/video.mp4" type="video/mp4">
+								<source src=<?php echo THEME_PATH."images/projects/video/video.mp4" ?> type="video/mp4">
 							</video>
                         </div>
                         <!-- Project Main Content Ends -->
@@ -664,7 +664,7 @@ get_header();
                                 <li><i class="fa fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span> : <span class="font-weight-400 uppercase">Adobe After Effects, Movie Maker</span></li>
                             </ul>
                             <hr>
-                            <a href="#" class="waves-effect waves-light btn font-weight-700">Preview <i class="fa fa-external-link"></i></a>
+                           <a href="javascript:void(0)" class="waves-effect waves-light btn font-weight-700" onclick="openNav()">Preview <i class="fa fa-external-link"></i></a>
                         </div>
                         <!-- Project Details Ends -->
                     </div>
@@ -688,7 +688,7 @@ get_header();
                                 <li><i class="fa fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span> : <span class="font-weight-400 uppercase">Adobe Photoshop, Gimp</span></li>
                             </ul>
                             <hr>
-                            <a href="#" class="waves-effect waves-light btn font-weight-700">Preview <i class="fa fa-external-link"></i></a>
+                           <a href="javascript:void(0)" class="waves-effect waves-light btn font-weight-700" onclick="openNav()">Preview <i class="fa fa-external-link"></i></a>
                         </div>
                         <!-- Project Details Ends -->
                     </div>
@@ -712,7 +712,7 @@ get_header();
                                 <li><i class="fa fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span> : <span class="font-weight-400 uppercase">Adobe Flash, Paint</span></li>
                             </ul>
                             <hr>
-                            <a href="#" class="waves-effect waves-light btn font-weight-700">Preview <i class="fa fa-external-link"></i></a>
+                           <a href="javascript:void(0)" class="waves-effect waves-light btn font-weight-700" onclick="openNav()">Preview <i class="fa fa-external-link"></i></a>
                         </div>
                         <!-- Project Details Ends -->
                     </div>
@@ -736,7 +736,7 @@ get_header();
                                 <li><i class="fa fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span> : <span class="font-weight-400 uppercase">3DS Max, Adobe Photoshop</span></li>
                             </ul>
                             <hr>
-                            <a href="#" class="waves-effect waves-light btn font-weight-700">Preview <i class="fa fa-external-link"></i></a>
+                           <a href="javascript:void(0)" class="waves-effect waves-light btn font-weight-700" onclick="openNav()">Preview <i class="fa fa-external-link"></i></a>
                         </div>
                         <!-- Project Details Ends -->
                     </div>
@@ -760,7 +760,7 @@ get_header();
                                 <li><i class="fa fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span> : <span class="font-weight-400 uppercase">Adobe Audition, Adobe Premiere</span></li>
                             </ul>
                             <hr>
-                            <a href="#" class="waves-effect waves-light btn font-weight-700">Preview <i class="fa fa-external-link"></i></a>
+                           <a href="javascript:void(0)" class="waves-effect waves-light btn font-weight-700" onclick="openNav()">Preview <i class="fa fa-external-link"></i></a>
                         </div>
                         <!-- Project Details Ends -->
                     </div>
@@ -784,7 +784,7 @@ get_header();
                                 <li><i class="fa fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span> : <span class="font-weight-400 uppercase">Adobe Audition, Adobe Premiere</span></li>
                             </ul>
                             <hr>
-                            <a href="#" class="waves-effect waves-light btn font-weight-700">Preview <i class="fa fa-external-link"></i></a>
+                           <a href="javascript:void(0)" class="waves-effect waves-light btn font-weight-700" onclick="openNav()">Preview <i class="fa fa-external-link"></i></a>
                         </div>
                         <!-- Project Details Ends -->
                     </div>
@@ -796,7 +796,7 @@ get_header();
                     <span class="control-button bl-previous-work"><i class="fa fa-angle-left"></i></span>
                     <!-- Previous Work Icon Ends -->
                     <!-- Close Work Icon Starts -->
-					<img alt="close" src="images/close-button.png" class="control-button bl-icon-close" />
+					<img alt="close" src=<?php echo THEME_PATH."images/close-button.png" ?> class="control-button bl-icon-close" />
                     <!-- Close Work Icon Ends -->
                     <!-- Next Work Icon Starts -->
                     <span class="control-button bl-next-work"><i class="fa fa-angle-right"></i></span>
@@ -808,6 +808,36 @@ get_header();
         </div>
     </div>
     <!-- Wrapper Ends -->
+    <!-- MODAL -->
+    <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+    <div class="row" style="background-color:#aaa;">
+        <div class="column">
+            <img src=<?php echo THEME_PATH."images/projects/project-5.jpg" ?> alt="project">
+            <div class="video-container">
+                <iframe class="video" src="https://www.youtube.com/embed/7e90gBu4pas" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="column">
+            <div class="accordion">Section 1 <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-minus" aria-hidden="true"></i></div>
+            <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <div class="accordion">Section 2 <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-minus" aria-hidden="true"></i></div>
+            <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <div class="accordion">Section 3 <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-minus" aria-hidden="true"></i></div>
+            <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+       
+    </div>
+</div>
 
 
 <?php
