@@ -9,6 +9,52 @@ get_header();
     </div>
     <!-- Preloader Ends -->
     <!-- Wrapper Starts -->
+    <div id="switcher" class="" style="margin-left: -500px; display: none;">
+        <div class="content-switcher">
+            <h4>STYLE SWITCHER</h4>
+            <ul>
+                <li>
+                    <a href="#" onclick="setActiveStyleSheet('purple');" title="purple" class="color"><img src=<?php echo THEME_PATH."images/styleswitcher/purple.png" ?> alt="purple"></a>
+                </li>
+                <li>
+                    <a href="#" onclick="setActiveStyleSheet('red');" title="red" class="color"><img src=<?php echo THEME_PATH."images/styleswitcher/red.png" ?> alt="red"></a>
+                </li>
+                <li>
+                    <a href="#" onclick="setActiveStyleSheet('blueviolet');" title="blueviolet" class="color"><img src=<?php echo THEME_PATH."images/styleswitcher/blueviolet.png" ?> alt="blueviolet"></a>
+                </li>
+                <li>
+                    <a href="#" onclick="setActiveStyleSheet('blue');" title="blue" class="color"><img src=<?php echo THEME_PATH."images/styleswitcher/blue.png" ?> alt="blue"></a>
+                </li>
+                <li>
+                    <a href="#" onclick="setActiveStyleSheet('goldenrod');" title="goldenrod" class="color"><img src=<?php echo THEME_PATH."images/styleswitcher/goldenrod.png" ?> alt="goldenrod"></a>
+                </li>
+                <li>
+                    <a href="#" onclick="setActiveStyleSheet('magenta');" title="magenta" class="color"><img src=<?php echo THEME_PATH."images/styleswitcher/magenta.png" ?> alt="magenta"></a>
+                </li>
+                <li>
+                    <a href="#" onclick="setActiveStyleSheet('yellowgreen');" title="yellowgreen" class="color"><img src=<?php echo THEME_PATH."images/styleswitcher/yellowgreen.png" ?> alt="yellowgreen"></a>
+                </li>
+                <li>
+                    <a href="#" onclick="setActiveStyleSheet('orange');" title="orange" class="color"><img src=<?php echo THEME_PATH."images/styleswitcher/orange.png" ?> alt="orange"></a>
+                </li>
+				<li>
+                    <a href="#" onclick="setActiveStyleSheet('green');" title="green" class="color"><img src=<?php echo THEME_PATH."images/styleswitcher/green.png" ?> alt="green"></a>
+                </li>
+				<li>
+                    <a href="#" onclick="setActiveStyleSheet('yellow');" title="yellow" class="color"><img src=<?php echo THEME_PATH."images/styleswitcher/yellow.png" ?> alt="yellow"></a>
+                </li>
+            </ul>
+			<h4>BODY SKIN</h4>
+
+            <label> <input class="dark_switch" type="radio" name="color_style" id="is_light" value="light"> Light</label>
+		    <label> <input class="dark_switch" type="radio" name="color_style" id="is_dark" value="dark" checked="checked">  Dark</label><br>
+			
+            <h4>Ngôn ngữ</h4>
+            <?php do_action('wpml_add_language_selector'); ?>
+            <div id="hideSwitcher">×</div>
+        </div>
+    </div>
+    <div id="showSwitcher" class="styleSecondColor" style="margin-left: 0px; display: block;"><i class="fa fa-cog fa-spin"></i></div>
     <div class="wrapper">
 		<div class="main-picture hide-on-med-and-down">
 		</div>
@@ -521,7 +567,9 @@ get_header();
 										If you have any suggestion, project or even you want to say Hello.. please fill out the form below and I will reply you shortly.
 									</p>
 								</div>
-                                <form class="contactform" method="post" action="php/process-form.php">
+                                <form class="contactform" method="post" action="<?php echo admin_url('admin-ajax.php'); ?>">
+                                    <?php wp_nonce_field('send_mail','security_code_1610'); ?>
+                                    <input name="action" value="send_mail" type="hidden">
                                     <!-- Name Field Starts -->
                                     <div class="input-field second-font">
                                         <i class="fa fa-user prefix"></i>

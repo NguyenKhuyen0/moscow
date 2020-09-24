@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href=<?php echo THEME_PATH."css/jquery.animatedheadline.css" ?> />
     <link rel="stylesheet" type="text/css" href=<?php echo THEME_PATH."css/materialize.min.css" ?> />
     <link rel="stylesheet" type="text/css" href=<?php echo THEME_PATH."css/style.css" ?> />
-    <link rel="stylesheet" type="text/css" href=<?php echo THEME_PATH."css/skins/yellow.css" ?> />
+    <link rel="stylesheet" type="text/css" href=<?php echo THEME_PATH."css/skins/orange.css" ?> />
 
     <!-- Template JS Files -->
     <script src=<?php echo THEME_PATH. "js/modernizr.custom.js" ?>></script>
