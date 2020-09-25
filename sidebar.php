@@ -25,6 +25,25 @@ wp_reset_postdata();
 			<a href="/blogs" class="btn back"><i class="fa fa-home"></i> home</a>
 		</div>
 	</div>
+	<?php do_action('wpml_add_language_selector'); ?>
+	<div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-dropdown js-wpml-ls-legacy-dropdown sidebar-wpml">
+		<ul>
+			<li tabindex="0" class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-dropdown">
+				<a href="#" class="js-wpml-ls-item-toggle wpml-ls-item-toggle">
+					<img class="wpml-ls-flag" src="/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png" alt="" /><span class="wpml-ls-native">English</span>
+				</a>
+
+				<ul class="wpml-ls-sub-menu">
+					<li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-vi wpml-ls-last-item">
+						<a href="/?lang=vi" class="wpml-ls-link">
+							<img class="wpml-ls-flag" src="/wp-content/plugins/sitepress-multilingual-cms/res/flags/vi.png" alt="" /><span class="wpml-ls-native" lang="vi">Tiếng Việt</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
 	<!-- Search Widget Starts -->
 	<form role="search" method="get" class="search-form" action="/">
 	<div class="widget widget-search">
@@ -33,6 +52,7 @@ wp_reset_postdata();
 		</div>
 	</div>
 	</form>
+	
 
 	<!-- Search Widget Ends -->
 	<?php

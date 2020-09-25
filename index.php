@@ -12,7 +12,7 @@ get_header();
     <div id="switcher" class="" style="margin-left: -500px; display: none;">
         <div class="content-switcher">
             <h4>STYLE SWITCHER</h4>
-            <ul>
+            <ul class="color-style">
                 <li>
                     <a href="#" onclick="setActiveStyleSheet('purple');" title="purple" class="color"><img src=<?php echo THEME_PATH."images/styleswitcher/purple.png" ?> alt="purple"></a>
                 </li>
@@ -49,7 +49,7 @@ get_header();
             <label> <input class="dark_switch" type="radio" name="color_style" id="is_light" value="light"> Light</label>
 		    <label> <input class="dark_switch" type="radio" name="color_style" id="is_dark" value="dark" checked="checked">  Dark</label><br>
 			
-            <h4>Ngôn ngữ</h4>
+            <h4 class="mt10">Language</h4>
             <?php do_action('wpml_add_language_selector'); ?>
             <div id="hideSwitcher">×</div>
         </div>

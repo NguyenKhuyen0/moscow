@@ -221,9 +221,9 @@ window.onload = function(e) {
 	setActiveStyleSheet(title);
 
 	// SWITCHER OPEN|CLOSED
-	if(switcher_visible != 'false') {
-		jQuery("#showSwitcher").trigger('click');
-	}
+	// if(switcher_visible != 'false') {
+	// 	jQuery("#showSwitcher").trigger('click');
+	// }
 
 	// DARK OR LIGHT
 	var is_dark = readCookie('is_dark');
