@@ -2599,6 +2599,11 @@ body.blog .pagination li a i {
     left: 0;
 }
 /* LANGUAGE SWITCHER */
+.language-switcher-container .wpml-ls-legacy-dropdown
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
 .mt10
 {
   margin-top: 10px !important;
